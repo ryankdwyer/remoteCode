@@ -4,6 +4,7 @@ app.directive('console', function () {
         templateUrl: "js/common/directives/console/console.html",
         link: function (s, e, a) {
             $(function () {
+                var socket = io();
                 var jqconsole = $('#console').jqconsole("Hi, check out the Chrome console! -> Cmd+Opt+J \n", '>>> ');
                 var startPrompt = function () {
                     // Start the prompt with history enabled.
@@ -18,6 +19,11 @@ app.directive('console', function () {
                 var resetBtn = angular.element(document.getElementById('reset'));
                 resetBtn.on('click', function (e) {
                 	startPrompt();
+                });
+                socket.on('codeToRunFromConsole', function (codeToRun) {
+                    // console.log('got an event from the server', codeToRun);
+                    jqconsole.ClearPromptText();
+                    jqconsole.SetPromptText(codeToRun);
                 });
             });
         }

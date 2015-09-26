@@ -6,11 +6,11 @@
     <select class="form-control" data-width="100%" ng-model="language" ng-options="language for language in languages" ng-change="changeLanguage(language)">
     </select>
     <label for="fontSize">Font Size</label>
-    <select class="form-control" data-width="100%" ng-model="fontSize" ng-options="size for size in fontSizes" ng-change="changeFontSize(size)">
+    <select class="form-control" data-width="100%" ng-model="fontSize" ng-options="size for size in fontSizes" ng-change="changeSize(size)">
     </select>
 </div>
 <div id="runFromConsole">
-    <div ng-click=""><i class="fa fa-cog" id="run"> Run Code</i></div>
+    <div ng-click="runFromConsole()"><i class="fa fa-cog" id="run"> Run Code</i></div>
 </div>
 <div id="editor">
     Welcome to remoteCode!

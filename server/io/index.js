@@ -60,6 +60,10 @@ module.exports = function (server) {
             console.log('from the server', file);
             socket.emit('fileToRender', file.content);
         });
+
+        socket.on('requestToRunFromConsole', function (codeToRun) {
+            socket.emit('codeToRunFromConsole', codeToRun);
+        });
     });
 
     return io;

@@ -1,4 +1,4 @@
-app.controller('VideoController', function ($scope, $state) {
+app.controller('VideoController', function ($scope, $state, VideoFactory) {
     $scope.inRoom = false;
     $scope.localVideo = false;
     // initialize socket
@@ -191,7 +191,6 @@ app.controller('VideoController', function ($scope, $state) {
                     url: newUrl,
                     name: name
                 };
-                // Insert socket of the path name; 
                 socket.emit('newRoom', roomObj);
                 if (!err) {
                     history.replaceState({
@@ -216,6 +215,10 @@ app.controller('VideoController', function ($scope, $state) {
     $scope.startLocalVideo = function () {
         $state.localVideo = true;
         window.location.reload();
+    };
+
+    $scope.sendRequest = function (roomInfo) {
+        VideoFactory.sendJoinRequest(roomInfo);
     };
 
     // Listen for when people leave chat

@@ -15,11 +15,16 @@ app.factory('EditorFactory', function () {
         editor.getSession().setMode('ace/mode/' + language.toLowerCase());
     }
 
+    function changeFontSize(fontSize) {
+        editor.setFontSize(fontSize.split('p')[0]);
+    }
+
     return {
         editor,
         changeTheme,
         themes,
         languages,
-        changeLanguage
+        changeLanguage,
+        changeFontSize
     };
 });

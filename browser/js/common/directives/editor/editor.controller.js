@@ -12,10 +12,17 @@ app.controller('EditorController', function ($scope, EditorFactory) {
     $scope.changeLanguage = function (language) {
         EditorFactory.changeLanguage(language);
     };
+    $scope.changeSize = function (fontSize) {
+        EditorFactory.changeFontSize(fontSize);
+    };
 
     function createNewRange(eventObj) {
         return new Range(eventObj.start.row, eventObj.start.column, eventObj.end.row, eventObj.end.column);
     }
+
+    $scope.runFromConsole = function () {
+        socket.emit('requestToRunFromConsole', $scope.editor.getValue());
+    };
 
     socket.on('notDriver', function () {
         console.log('setting to read only');
