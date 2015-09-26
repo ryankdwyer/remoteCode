@@ -1,0 +1,36 @@
+#container {
+    margin: 0px auto;
+    left: 25%;
+    top: 0px;
+    width: 500px;
+    height: 375px;
+    border: 1px #333 solid;
+}
+
+#remoteContainer {
+    margin: 0px auto;
+    left: 25%;
+    top: 50%;
+    width: 500px;
+    height: 375px;
+    border: 1px #333 solid;
+}
+
+#videoElement {
+    right: 25%;
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+#remoteVideoElement {
+    right: 25%;
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+video {
+    height: 250px;
+    width: 250px;
+}

@@ -1,0 +1,3 @@
+[submodule "jsrepl"]
+	path = jsrepl
+	url = https://github.com/replit/jsrepl.git

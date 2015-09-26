@@ -1,0 +1,15 @@
+<div id="editorCustom">
+    <h4>Make the editor yours!</h4>
+    <label for="theme">Theme</label>
+    <select class="form-control" data-width="100%" ng-model="theme" ng-options="theme for theme in themes" ng-change="changeTheme(theme)">
+    </select>
+    <label for="language">Language</label>
+    <select class="form-control" data-width="100%" ng-model="language" ng-options="language for language in languages" ng-change="changeLanguage(language)">
+    </select>
+    <label for="fontSize">Font Size</label>
+    <select class="form-control" data-width="100%" ng-model="fontSize" ng-options="size for size in fontSizes" ng-change="changeFontSize(size)">
+    </select>
+</div>
+<div id="editor">
+    Welcome to remoteCode!
+</div>

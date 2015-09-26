@@ -1,0 +1,80 @@
+<<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Test</title>
+        <style>
+        #console {
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            background-color: black;
+        }
+        /* The inner console element. */
+        
+        .jqconsole {
+            padding: 10px;
+        }
+        /* The cursor. */
+        
+        .jqconsole-cursor {
+            background-color: gray;
+        }
+        /* The cursor color when the console looses focus. */
+        
+        .jqconsole-blurred .jqconsole-cursor {
+            background-color: #666;
+        }
+        /* The current prompt text color */
+        
+        .jqconsole-prompt {
+            color: #0d0;
+        }
+        /* The command history */
+        
+        .jqconsole-old-prompt {
+            color: #0b0;
+            font-weight: normal;
+        }
+        /* The text color when in input mode. */
+        
+        .jqconsole-input {
+            color: #dd0;
+        }
+        /* Previously entered input. */
+        
+        .jqconsole-old-input {
+            color: #bb0;
+            font-weight: normal;
+        }
+        /* The text color of the output. */
+        
+        .jqconsole-output {
+            color: white;
+        }
+        </style>
+    </head>
+
+    <body>
+        
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="replit-jq-console-4923dbe/jqconsole.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        $(function() {
+            var jqconsole = $('#console').jqconsole('Hi\n', '>>>');
+            var startPrompt = function() {
+                // Start the prompt with history enabled.
+                jqconsole.Prompt(true, function(input) {
+                    // Output input with the class jqconsole-output.
+                    jqconsole.Write(eval(input) + '\n', 'jqconsole-output');
+                    
+                    // Restart the prompt.
+                    startPrompt();
+                });
+            };
+            startPrompt();
+        });
+        </script>
+    </body>
+
+    </html>

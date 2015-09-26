@@ -1,0 +1,5 @@
+*.pyc
+langs/*/*.html
+.DS_STORE
+build/
+src/*.js

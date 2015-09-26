@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3 id="title">Start a room</h3>
+            <form id="createRoom" ng-show="!inRoom">
+                <div class="form-group">
+                    <input class="form-control form-inline" id="sessionInput" placeholder="Room name" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-inline" id="name" placeholder="Your name" />
+                </div>
+                <div class="form-group">
+                    <button id="createIt" disabled type="submit" class="btn btn-success">Create it!</button>
+                </div>
+            </form>
+            <button type="button" class="btn btn-danger" ng-if="inRoom" ng-click="leaveChat()">Leave the chat</button>
+            <div id="subTitle" ng-show="inRoom"></div>
+            <hr>
+            <button class="btn btn-success" ng-click="startLocalVideo()" ng-if="!inRoom">Start Local Video?</button>
+            <driver></driver>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="videoContainer col-sm-3">
+                        <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
+                    </div>
+                    <div id="remotes" class="col-sm-3">
+                        <div id="localScreenContainer" class="videoContainer">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div>
+                            <ul id="videoRooms">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <file-upload></file-upload>
+            </div>
+            <div class="col-sm-3">
+                <file-download></file-download>
+            </div>
+        </div>
+        <div class='container'>
+            <div class="row">
+                <editor></editor>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <console></console>
+            </div>
+        </div>
+    </div>
+</div>

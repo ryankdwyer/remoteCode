@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdfdfd;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#main {
+  // padding-top: 60px;
+  // width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.form-control {
+ border-radius: 0px; 
+}
+
+.select {
+  border-radius: 0px;
+}
+
+[ng-click] {
+  cursor: pointer;
+}
+
+@import 'directives/main';
+@import 'home/main';
+@import 'about/main';
+@import 'tutorial/main';
+@import 'login/main';
+@import 'editor/main';

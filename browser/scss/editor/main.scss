@@ -1,0 +1,20 @@
+#editor {
+    position: absolute;
+    top: 120px;
+    right: 250px;
+    bottom: 0;
+    width: 35%;
+    height: 75%;
+    border-radius: 5px;
+}
+
+#editorCustom {
+    position: absolute;
+    height: 250px;
+    width: 220px;
+    top: 120px;
+    left: 50px;
+    padding: 10px;
+    font-color: darkgray;
+    border: 1px solid lightgray
+}
