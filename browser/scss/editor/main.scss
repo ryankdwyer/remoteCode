@@ -1,19 +1,30 @@
 #editor {
     position: absolute;
-    top: 120px;
-    right: 250px;
+    top: 15%;
+    right: 13%;
     bottom: 0;
-    width: 35%;
-    height: 75%;
+    width: 38%;
+    height: 91%;
     border-radius: 5px;
 }
 
 #editorCustom {
     position: absolute;
-    height: 250px;
-    width: 220px;
+    height: auto;
+    width: 120px;
     top: 120px;
-    left: 50px;
+    right: 4%;
+    padding: 10px;
+    font-color: darkgray;
+    border: 1px solid lightgray
+}
+
+#runFromConsole {
+    position: absolute;
+    height: auto;
+    width: 120px;
+    top: 330px;
+    right: 4%;
     padding: 10px;
     font-color: darkgray;
     border: 1px solid lightgray

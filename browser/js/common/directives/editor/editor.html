@@ -1,5 +1,4 @@
 <div id="editorCustom">
-    <h4>Make the editor yours!</h4>
     <label for="theme">Theme</label>
     <select class="form-control" data-width="100%" ng-model="theme" ng-options="theme for theme in themes" ng-change="changeTheme(theme)">
     </select>
@@ -9,6 +8,9 @@
     <label for="fontSize">Font Size</label>
     <select class="form-control" data-width="100%" ng-model="fontSize" ng-options="size for size in fontSizes" ng-change="changeFontSize(size)">
     </select>
+</div>
+<div id="runFromConsole">
+    <div ng-click=""><i class="fa fa-cog" id="run"> Run Code</i></div>
 </div>
 <div id="editor">
     Welcome to remoteCode!
