@@ -33,13 +33,6 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
         }
     });
 
-    // function showVolume(el, volume) {
-    //     if (!el) return;
-    //     if (volume < -45) volume = -45; // -45 to -20 is
-    //     if (volume > -20) volume = -20; // a good range
-    //     el.value = volume;
-    // }
-
     // we got access to the camera
     webrtc.on('localStream', function (stream) {
         var button = document.getElementById('createIt');
@@ -90,16 +83,6 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
                 container.style.height = video.videoHeight + 'px';
             };
 
-            // // show the remote volume
-            // var vol = document.createElement('meter');
-            // vol.id = 'volume_' + peer.id;
-            // vol.className = 'volume';
-            // vol.min = -45;
-            // vol.max = -20;
-            // vol.low = -40;
-            // vol.high = -25;
-            // container.appendChild(vol);
-
             // show the ice connection state
             if (peer && peer.pc) {
                 var connstate = document.createElement('div');
@@ -138,15 +121,6 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
             remotes.removeChild(el);
         }
     });
-
-    // // local volume has changed
-    // webrtc.on('volumeChange', function (volume, treshold) {
-    //     showVolume(document.getElementById('localVolume'), volume);
-    // });
-    // // remote volume has changed
-    // webrtc.on('remoteVolumeChange', function (peer, volume) {
-    //     showVolume(document.getElementById('volume_' + peer.id), volume);
-    // });
 
     // local p2p/ice failure
     webrtc.on('iceFailed', function (peer) {
@@ -207,6 +181,7 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
 
     $scope.leaveChat = function () {
         $scope.inRoom = false;
+
         socket.emit('leavingChat');
         $state.reload('video');
         $state.reload();
@@ -229,10 +204,13 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
     // listen for new chat rooms
     socket.on('newRoomUrl', function (newRoom) {
         var link = document.createElement('a');
+        var button = document.createElement('button');
+        button.className = 'btn btn-success';
         link.href = 'http://192.168.1.15:1337' + newRoom.url;
         var text = document.createTextNode('Join ' + newRoom.name + "'s room");
         link.appendChild(text);
-        document.getElementById('videoRooms').appendChild(link);
-        console.log(link);
+        button.appendChild(link);
+        document.getElementById('videoRooms').appendChild(button);
+        console.log(button);
     });
 });

@@ -15,9 +15,9 @@
 <div id="messages">
     <form role="form">
         <div class="form-group form-inline">
-            <select class="form-control" ng-model='fileToChange' ng-options="file.fileName for file in files">
+            <select class="form-control form-sm" ng-model='fileToChange' ng-options="file.fileName for file in files">
             </select>
-            <i class="fa fa-play-circle" ng-click="emitAndRender()"> Switch File</i>
+            <i class="fa fa-play-circle" ng-click="emitAndRender()"> Switch to File</i>
         </div>
     </form>
 </div>
