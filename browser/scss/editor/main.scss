@@ -1,10 +1,10 @@
 #editor {
-    position: absolute;
-    top: 15%;
-    right: 15%;
-    bottom: 0;
-    width: 33%;
-    height: 75%;
+    // position: absolute;
+    // top: 10%;
+    // right: 22%;
+    // bottom: 0;
+    width: 105%;
+    height: 800px;
     border-radius: 5px;
 }
 
@@ -12,8 +12,7 @@
     position: absolute;
     height: auto;
     width: 120px;
-    top: 120px;
-    right: 4%;
+    right: -25%;
     padding: 10px;
     font-color: darkgray;
     border: 1px solid lightgray
@@ -23,9 +22,9 @@
     position: absolute;
     height: auto;
     width: 120px;
-    top: 330px;
-    right: 4%;
+    top: 31%;
+    right: -25%;
     padding: 10px;
     font-color: darkgray;
-    border: 1px solid lightgray
+    border: 2px solid lightgray
 }
