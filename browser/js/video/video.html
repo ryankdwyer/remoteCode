@@ -10,7 +10,7 @@
                     <input class="form-control form-inline" ng-model='room.name' id="name" placeholder="Your name" />
                 </div>
                 <div class="form-group">
-                    <input class="form-control form-inline" ng-model='room.email' placeholder="Email to invite..." />
+                    <input type="email" class="form-control form-inline" ng-model='room.email' placeholder="Email to invite..." />
                 </div>
                 <div class="form-group">
                     <button id="createIt" disabled type="submit" class="btn btn-success" ng-click="sendRequest(room)">Create it!</button>
@@ -18,6 +18,14 @@
             </form>
             <button type="button" class="btn btn-danger" ng-if="inRoom" ng-click="leaveChat()">Leave the chat</button>
             <div id="subTitle" ng-show="inRoom"></div>
+            <form id="sendLink" ng-show="showSendLink">
+                <div class="form-group">
+                    <input class="form-control form-inline" ng-model='emailLink' placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <button id="sendLink" class="btn btn-success" ng-click="sendLink(emailLink)">Send invite</button>
+                </div>
+            </form>
             <hr>
             <button class="btn btn-success" ng-click="startLocalVideo()" ng-if="!inRoom">Start Local Video?</button>
             <driver></driver>

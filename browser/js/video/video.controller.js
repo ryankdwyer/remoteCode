@@ -1,6 +1,7 @@
 app.controller('VideoController', function ($scope, $state, VideoFactory) {
     $scope.inRoom = false;
     $scope.localVideo = false;
+    $scope.showSendLink = false;
     // initialize socket
     var socket = io();
 
@@ -21,7 +22,7 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
         debug: false,
         detectSpeakingEvents: true,
         autoAdjustMic: false,
-        url: "http://192.168.1.15:8888/",
+        url: "http://192.168.0.2:8888/",
     });
 
     // when it's ready, join if we got a room from the URL
@@ -144,7 +145,6 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
 
     // Since we use this twice we put it here
     function setRoom(name) {
-        // document.querySelector('form').remove();
         document.getElementById('title').innerText = 'Room: ' + name;
         document.getElementById('subTitle').innerText = 'Link to join: ' + location.href;
         $('body').addClass('active');
@@ -153,8 +153,10 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
     if (room) {
         setRoom(room);
     } else {
-        $('form').submit(function () {
+        $('#createRoom').submit(function () {
+            // console.log('changing url...');
             $scope.inRoom = true;
+            $scope.showSendLink = true;
             var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
             var name = $('#name').val();
             $('#sessionInput').val('');
@@ -181,7 +183,6 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
 
     $scope.leaveChat = function () {
         $scope.inRoom = false;
-
         socket.emit('leavingChat');
         $state.reload('video');
         $state.reload();
@@ -193,6 +194,15 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
     };
 
     $scope.sendRequest = function (roomInfo) {
+        VideoFactory.sendJoinRequest(roomInfo);
+    };
+
+    $scope.sendLink = function (email) {
+        var roomInfo = {
+            email: email,
+            roomName: location.search.split("?")[1],
+            name: 'Host'
+        };
         VideoFactory.sendJoinRequest(roomInfo);
     };
 
