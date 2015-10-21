@@ -22,7 +22,7 @@ app.controller('VideoController', function ($scope, $state, VideoFactory) {
         debug: false,
         detectSpeakingEvents: true,
         autoAdjustMic: false,
-        url: "http://192.168.0.2:8888/",
+        url: "http://192.168.1.15:8888/",
     });
 
     // when it's ready, join if we got a room from the URL
