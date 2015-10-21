@@ -8,6 +8,9 @@
 - Express
 - Node.js
 - Websockets using socket.io
+- Signalmaster by SimpleWebRTC
+- Ace Editor
+- jqConsole
 
 ## To get started:
 1. Download this repository into its own directory. 
