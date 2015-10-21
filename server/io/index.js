@@ -16,19 +16,20 @@ module.exports = function (server) {
             if (driver === socket.id) driver = null;
         });
 
-        if (!driver) {
-            driver = socket.id;
-            console.log('driver: ', driver);
-            socket.broadcast.emit('notDriver');
-        } else {
-            console.log('emitting not a driver');
-            // socket.broadcast.emit('driver');
-        }
+        // if (!driver) {
+        //     driver = socket.id;
+        //     console.log('driver: ', driver);
+        //     socket.broadcast.emit('notDriver');
+        // } else {
+        //     console.log('emitting not a driver');
+        //     // socket.broadcast.emit('driver');
+        // }
 
         socket.on('editorUpdate', function (data) {
-            if (driver === socket.id) {
-                socket.broadcast.emit('editorUpdate', data);
-            }
+            // if (driver === socket.id) {
+            //     socket.broadcast.emit('editorUpdate', data);            
+            // }
+            socket.broadcast.emit('editorUpdate', data);
         });
 
         socket.on('fileSaveInitiated', function (fileName) {
