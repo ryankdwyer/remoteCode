@@ -17,7 +17,7 @@
 2. ```cd``` into your new directory and ```npm install```
 3. ```cd signalmaster-master``` and ```npm install```
 4. ```gulp``` in your remoteCode directory
-5. ```npm start``` in both of your directories in separate terminal windows
+5. ```npm start``` in both of your new directories in separate terminal windows - you want two servers running!
 6. Direct your browser to http://www.localhost:1337
 7. Start coding and chatting!
 
