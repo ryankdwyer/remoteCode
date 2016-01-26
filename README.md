@@ -1,13 +1,17 @@
 # remoteCode
-- Provides a way for teams to collaborate on coding projects in real-time. 
-- Allows users to communicate via video chat while working.
+- Provides a way for teams to collaborate on coding projects in real-time
+- Allows users to communicate via video chat while working
+- Supports several popular programming languages
+- Users can upload and download files they are working on
+
+Built as an experiment in WebRTC technology. 
 
 ##Technologies used
 - AngularJS
 - WebRTC
 - Express
 - Node.js
-- Websockets using socket.io
+- socket.io
 - Signalmaster by SimpleWebRTC
 - Ace Editor
 - jqConsole
